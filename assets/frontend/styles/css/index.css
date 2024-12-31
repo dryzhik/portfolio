@@ -107,7 +107,7 @@ main {
 	height: auto;
 	left: 0px;
 	top: 0px;
-	height: 100%;
+	/*height: fit-content;*/
 
 	scroll-behavior: smooth;
 
@@ -120,11 +120,11 @@ main {
 	z-index: 1;
 	visibility: visible;           /* hidden ,  visible*/
 
-	text-align: center;
+	/*text-align: center;
 	display: flex;
 	flex-direction: column;
 	vertical-align: center;
-	justify-content: center;
+	justify-content: center;*/
 }
 
 /* {2.1} - settings section 1: */

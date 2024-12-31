@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.4.2, created on 2024-12-31 11:31:57
+/* Smarty version 5.4.2, created on 2024-12-31 12:29:31
   from 'file:C:\projects\site_portfolio/assets/frontend/mains/main_for_vacancies.php' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_6773abfdd312f8_63093670',
+  'unifunc' => 'content_6773b97bbf8e35_16586435',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6773abfdd312f8_63093670 (\Smarty\Template $_smarty_tpl) {
+function content_6773b97bbf8e35_16586435 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 }
 }
