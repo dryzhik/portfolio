@@ -3,5 +3,5 @@
     $host   = 'localhost';
     $dbname = 'portfolioDB';
     $user   = 'postgres';
-    $passwd = '291244';
+    $passwd = 'postgres';
 ?>
