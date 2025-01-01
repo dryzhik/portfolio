@@ -16,8 +16,8 @@
 	}
 
 	enum AUTH : string {
-		case JSX  = "./../../backend/js/authorization.js";
-		case CSS  = "./../../frontend/styles/css/authorization.css";
+		case JSX  = "/assets/backend/js/authorization.js";
+		case CSS  = "/assets/frontend/styles/css/authorization.css";
 		case PATH = "/assets/frontend/pages/authorization.php";
 	}
 
@@ -36,6 +36,14 @@
 		case PRJ = "/assets/frontend/pages/projects.php";
 		case TMS = "/assets/frontend/pages/teams.php";
 		case VAC = "/assets/frontend/pages/vacancies.php";
+	}
+
+	enum STYLE : string {
+		case INDEX 		= "/assets/frontend/styles/css/css/index.css";
+		case PROFILE 	= "/assets/frontend/styles/css/css/profile.css";
+		case TEAMS 		= "/assets/frontend/styles/css/css/teams.css";
+		case VACANCIES 	= "/assets/frontend/styles/css/css/vacancies.css";
+		case PROJECTS	= "/assets/frontend/styles/css/css/projects.css";
 	}
 
 	/* */

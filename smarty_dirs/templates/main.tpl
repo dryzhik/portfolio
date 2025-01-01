@@ -8,14 +8,15 @@
 		<title>Портфолио - ВЕГА</title>
 		
 		<!--{1} Иконка сайта -->
-		<link  href="{$FCN}" type="image/x-icon" 	rel="icon">
+		<link  href="{$FCN}" 		type="image/x-icon" 	rel="icon">
 		
 		<!--{2} Стили-->
-		<link  href="{$CSS}" type="text/css" 	rel="stylesheet">
+		<link  href="{$CSS}" 	  	type="text/css" 	rel="stylesheet"> <!-- Общий стиль для всех страниц -->
+		<link  href="{$CSS_MAIN}" 	type="text/css" 	rel="stylesheet"> <!-- Стиль для `<main>`-->
 		
 		<!--{3} Скрипты -->
-		<script src="{$JSX}" type="text/javascript"></script> 
-		<script src="{$JQR}" type="text/javascript"></script>
+		<script src="{$JSX}" 		type="text/javascript"></script> 
+		<script src="{$JQR}" 		type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="layout">
@@ -40,9 +41,10 @@
 					<div>
 						{if isset($icon)|default}
 							<a href="">
-								<img class="" src="{$icon}"/>
+								<img class="" src="{$icon}" />
 							</a>
-							<section style="position: absolute; z-index: 5; width: fit-content; heigh: 100px; border: 3px solid black; border-radius: 5px; ">
+							<section style="display: flex; flex-direction: column; position: absolute; z-index: 5; width: fit-content; heigh: 100px; border: 3px solid black; border-radius: 5px; ">
+								<button onclick="location.href='{$PROFILE}'">Мой профиль</button>
 								<button onclick="logout('{$ACTION}');">Выход</button>
 							</section>
 						{else}

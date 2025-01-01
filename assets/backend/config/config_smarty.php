@@ -45,8 +45,9 @@
     $smarty->assign("TEAMS",     NAV::TMS->value);
     $smarty->assign("VACANCIES", NAV::VAC->value);
 
-    $smarty->assign("ACTION",   PAGE::ACT->value); // Страница сервера для выхода;
-    $smarty->assign("INDEX",    INDEX::PATH->value); // Страница `index.php`;
+    $smarty->assign("ACTION",   PAGE::ACT->value);      // Страница сервера для выхода;
+    $smarty->assign("INDEX",    INDEX::PATH->value);    // Страница `index.php`;
+    $smarty->assign("PROFILE",  PAGE::PFL->value);      // Страница `profile.php`;
 
     // $smarty->display("main.tpl");  // выводим обработанный шаблон
 ?>

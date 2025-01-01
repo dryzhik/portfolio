@@ -11,6 +11,7 @@
 		$smarty->assign(TRU::icon->name, '/assets/frontend/icons/'.$_SESSION[TRU::icon->name]); // $root.
 	}
 
+	$smarty->assign("CSS_MAIN", STYLE::PROFILE->value);
 	$smarty->assign("MAIN", $root.'/assets/frontend/mains/main_for_profile.php'); // Указываем, что добавляем. (Реализуем и добавляем только основную часть кода);
     
 	$smarty->display($root.'/smarty_dirs/templates/main.tpl' );  // Указываем, куда добавляем и выводим обработанный шаблон.

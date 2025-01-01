@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.4.2, created on 2025-01-01 12:11:35
+/* Smarty version 5.4.2, created on 2025-01-01 12:53:02
   from 'file:C:\projects\site_portfolio/smarty_dirs/templates/main.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_677506c74f88a2_24242279',
+  'unifunc' => 'content_6775107eb648e0_84350809',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fb7f699a3867fe7aa93cb3d0576d3599b9f1dc66' => 
     array (
       0 => 'C:\\projects\\site_portfolio/smarty_dirs/templates/main.tpl',
-      1 => 1735722691,
+      1 => 1735724866,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_677506c74f88a2_24242279 (\Smarty\Template $_smarty_tpl) {
+function content_6775107eb648e0_84350809 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 ?><!DOCTYPE HTML>
 <html>
@@ -35,22 +35,24 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 		<!--<?php echo 1;?>
  Иконка сайта -->
 		<link  href="<?php echo $_smarty_tpl->getValue('FCN');?>
-" type="image/x-icon" 	rel="icon">
+" 		type="image/x-icon" 	rel="icon">
 		
 		<!--<?php echo 2;?>
  Стили-->
 		<link  href="<?php echo $_smarty_tpl->getValue('CSS');?>
-" type="text/css" 	rel="stylesheet">
+" 	  	type="text/css" 	rel="stylesheet"> <!-- Общий стиль для всех страниц -->
+		<link  href="<?php echo $_smarty_tpl->getValue('CSS_MAIN');?>
+" 	type="text/css" 	rel="stylesheet"> <!-- Стиль для `<main>`-->
 		
 		<!--<?php echo 3;?>
  Скрипты -->
 		<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->getValue('JSX');?>
-" type="text/javascript"><?php echo '</script'; ?>
+" 		type="text/javascript"><?php echo '</script'; ?>
 > 
 		<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->getValue('JQR');?>
-" type="text/javascript"><?php echo '</script'; ?>
+" 		type="text/javascript"><?php echo '</script'; ?>
 >
 	</head>
 	<body>
@@ -81,9 +83,11 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 						<?php if ((($tmp = (null !== ($_smarty_tpl->getValue('icon') ?? null)) ?? null)===null||$tmp==='' ? '' ?? null : $tmp)) {?>
 							<a href="">
 								<img class="" src="<?php echo $_smarty_tpl->getValue('icon');?>
-"/>
+" />
 							</a>
-							<section style="position: absolute; z-index: 5; width: fit-content; heigh: 100px; border: 3px solid black; border-radius: 5px; ">
+							<section style="display: flex; flex-direction: column; position: absolute; z-index: 5; width: fit-content; heigh: 100px; border: 3px solid black; border-radius: 5px; ">
+								<button onclick="location.href='<?php echo $_smarty_tpl->getValue('PROFILE');?>
+'">Мой профиль</button>
 								<button onclick="logout('<?php echo $_smarty_tpl->getValue('ACTION');?>
 ');">Выход</button>
 							</section>
