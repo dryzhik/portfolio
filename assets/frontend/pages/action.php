@@ -50,7 +50,13 @@
             break;
         case ACTION::logout->name:
             session_destroy();
-            $URL = "index.php?logout=true";
+            $URL = "/index.php"; // ?logout=true
+
+            echo json_encode(array(
+                'logout'      => "success", 
+                'error_code' => 0,
+                'url'        => $URL
+            ));
             break;
     }
 

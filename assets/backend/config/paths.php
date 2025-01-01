@@ -2,9 +2,17 @@
 
 	//echo $_GET['register'];
 
+	enum TOTAL : string {
+		case JQR  = "/assets/backend/js/library/jquery/jquery-3.7.1.min.js";
+		case FCN  = "/assets/frontend/icons/vega.ico";
+        case CDB  = "/assets/backend/config/config_db.php";
+        case WDBC = "/assets/backend/config/WrapperDataBaseConn.php";
+	}
+
 	enum INDEX : string {
 		case JSX = "/assets/backend/js/index.js";
 		case CSS = "/assets/frontend/styles/css/index.css";
+		case PATH = "/index.php";
 	}
 
 	enum AUTH : string {
@@ -19,13 +27,6 @@
 		case PATH = "/assets/frontend/pages/registration.php";
     }
 
-	enum TOTAL : string {
-		case JQR  = "/assets/backend/js/library/jquery/jquery-3.7.1.min.js";
-		case FCN  = "/assets/frontend/icons/vega.ico";
-        case CDB  = "/assets/backend/config/config_db.php";
-        case WDBC = "/assets/backend/config/WrapperDataBaseConn.php";
-	}
-
     enum PAGE : string {
         case PFL = "/assets/frontend/pages/profile.php";
         case ACT = "/assets/frontend/pages/action.php";
@@ -37,4 +38,69 @@
 		case VAC = "/assets/frontend/pages/vacancies.php";
 	}
 
+	/* */
+
+	enum TABS_NAME : string {
+		case TAB_REGISTRATION_USER = "info_user";
+	}
+	
+	class_alias('TABS_NAME', 'TBN');
+	
+	enum TAB_REGISTRATION_USER { /* TAB_REGISTRATION_USER */
+		case id;
+		case firstname;
+		case lastname;
+		case patronymic;
+		case login;
+		case roles;
+		case icon;
+		case hash; /* 8 */ /* pswd_hash */
+		case telephone;
+		case email;
+		case status; /* end */
+	}
+	
+	class_alias('TAB_REGISTRATION_USER', 'TRU'); 
+	
+	enum SELECT_QUERY : int {
+		case SELECT  = 0;
+		case FROM    = 1;
+		case WHERE   = 2;
+		case LIMIT   = 3;
+		case OFFSET  = 4;
+		case HAVING  = 5;
+		case GROUPBY = 6;
+		case ORDERBY = 7;
+		case ORDERBYTYPE = 8;
+	}
+	
+	class_alias('SELECT_QUERY', 'SQ');
+	
+	enum ORDERBYTYPE {
+		case ACS;
+		case DESC;
+	}
+	
+	class_alias('ORDERBYTYPE', 'OBT');
+	
+	enum INSERT_INTO_QUERY : int {
+		case INSERT_INTO  = 0;
+		case COLUMNS      = 1;
+		case VALUES       = 2;
+	}
+	
+	class_alias('INSERT_INTO_QUERY', 'IIQ');
+	
+	enum OPBIN : string {
+		case AND    = "AND";
+		case OR     = "OR";
+	}
+	
+	enum ERRORCODE: int {
+		case   BLOCK_PROFILE = 1;
+		case UNBLOCK_PROFILE = 0;
+		case        PASSWORD = 2;
+	}
+	
+	class_alias('OPBIN', 'OB');
 ?>

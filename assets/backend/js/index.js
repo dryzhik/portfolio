@@ -28,3 +28,20 @@ function change_size_iframe(name_iframe, width, height){
     root.style.setProperty("--iframeHeight", `${height}vh`);
 }
 
+function logout(path){
+    $.ajax({
+        type: "POST",
+        url: path,
+        data: {
+            action: "logout"
+        },
+        success: function(result) {
+            let json_data = JSON.parse(result);
+
+            if(json_data.hasOwnProperty('url')){ // && json_data.hasOwnProperty('error_code')
+                window.top.location.href = json_data['url'];
+            }
+        }
+    });
+}
+

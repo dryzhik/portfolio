@@ -1,60 +1,5 @@
 <?php
 
-enum TABS_NAME : string {
-    case TAB_REGISTRATION_USER = "info_user";
-}
-
-class_alias('TABS_NAME', 'TBN');
-
-enum TAB_REGISTRATION_USER { /* TAB_REGISTRATION_USER */ 
-    case hash; /* 8 */
-    case status_profile; /* end */
-}
-
-class_alias('TAB_REGISTRATION_USER', 'TRU'); 
-
-enum SELECT_QUERY : int {
-    case SELECT  = 0;
-    case FROM    = 1;
-    case WHERE   = 2;
-    case LIMIT   = 3;
-    case OFFSET  = 4;
-    case HAVING  = 5;
-    case GROUPBY = 6;
-    case ORDERBY = 7;
-    case ORDERBYTYPE = 8;
-}
-
-class_alias('SELECT_QUERY', 'SQ');
-
-enum ORDERBYTYPE {
-    case ACS;
-    case DESC;
-}
-
-class_alias('ORDERBYTYPE', 'OBT');
-
-enum INSERT_INTO_QUERY : int {
-    case INSERT_INTO  = 0;
-    case COLUMNS      = 1;
-    case VALUES       = 2;
-}
-
-class_alias('INSERT_INTO_QUERY', 'IIQ');
-
-enum OPBIN : string {
-    case AND    = "AND";
-    case OR     = "OR";
-}
-
-enum ERRORCODE: int {
-    case   BLOCK_PROFILE = 1;
-    case UNBLOCK_PROFILE = 0;
-    case        PASSWORD = 2;
-}
-
-class_alias('OPBIN', 'OB');
-
 class Query {
     private $dbconn;
 
@@ -389,7 +334,7 @@ class WrapperDataBaseConn {
                 $hash_from_db = $row_data[TRU::hash->name]; 
 
                 // Проверка на блокировку профиля:
-                $stprofile = $row_data[TRU::status_profile->name];
+                $stprofile = $row_data[TRU::status->name];
 
                 if($stprofile == "block") {$this->last_error = ERRORCODE::BLOCK_PROFILE->value; return false; }
 
@@ -402,6 +347,18 @@ class WrapperDataBaseConn {
                     $_SESSION['email']   = $row[3];
                     $_SESSION['telp']    = $row[4];
                     $_SESSION['alamat']  = $row[5];*/
+
+                    $_SESSION[TRU::id->name]         = $row_data[TRU::id->name];
+                    $_SESSION[TRU::firstname->name]  = $row_data[TRU::firstname->name];
+                    $_SESSION[TRU::lastname->name]   = $row_data[TRU::lastname->name];
+                    $_SESSION[TRU::patronymic->name] = $row_data[TRU::patronymic->name];
+                    $_SESSION[TRU::login->name]      = $row_data[TRU::login->name];
+                    $_SESSION[TRU::roles->name]      = $row_data[TRU::roles->name];
+                    $_SESSION[TRU::icon->name]       = $row_data[TRU::icon->name];
+                    $_SESSION[TRU::hash->name]       = $row_data[TRU::hash->name];
+                    $_SESSION[TRU::email->name]      = $row_data[TRU::email->name];
+                    $_SESSION[TRU::telephone->name]  = $row_data[TRU::telephone->name];
+                    $_SESSION[TRU::status->name]     = $row_data[TRU::status->name];
 
                     $this->last_error = ERRORCODE::UNBLOCK_PROFILE->value;
                 } else {

@@ -20,7 +20,9 @@
 	<body>
 		<div class="layout">
 			<header>
-				<a class="logo"><h1 class="font-logo">ПОРТФОЛИО</h1></a>
+				<a class="logo" href="{$INDEX}">
+					<h1 class="font-logo">ПОРТФОЛИО</h1>
+				</a>
 				<div class="menu">
 					<nav class="nav">
 						<ul>
@@ -36,13 +38,19 @@
 						</ul>
 					</nav>
 					<div>
-						<div>
-							<a target="iframe-auth-reg" onclick="create_iframe_authorization_registration();" href="{$HFR}" >Вход</a> <!-- <?php echo AUTH::PATH->value; ?> href="./frames/authorization.html" -->
-						</div>
-						<!--<a href="">
-							<img class="" src="./frontend/img/profile_oleg.jpg"/>
-						</a>-->
-					</div>
+						{if isset($icon)|default}
+							<a href="">
+								<img class="" src="{$icon}"/>
+							</a>
+							<section style="position: absolute; z-index: 5; width: fit-content; heigh: 100px; border: 3px solid black; border-radius: 5px; ">
+								<button onclick="logout('{$ACTION}');">Выход</button>
+							</section>
+						{else}
+							<div>
+								<a target="iframe-auth-reg" onclick="create_iframe_authorization_registration();" href="{$HFR}" >Вход</a> <!-- <?php echo AUTH::PATH->value; ?> href="./frames/authorization.html" -->
+							</div>
+						{/if}
+					</div> 						<!--{date_now}-->
 				</div>
 			</header>
 			<main>

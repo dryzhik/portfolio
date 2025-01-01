@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.4.2, created on 2024-12-31 12:27:49
+/* Smarty version 5.4.2, created on 2025-01-01 12:11:35
   from 'file:C:\projects\site_portfolio/smarty_dirs/templates/main.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_6773b9153fb126_01124740',
+  'unifunc' => 'content_677506c74f88a2_24242279',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fb7f699a3867fe7aa93cb3d0576d3599b9f1dc66' => 
     array (
       0 => 'C:\\projects\\site_portfolio/smarty_dirs/templates/main.tpl',
-      1 => 1735633557,
+      1 => 1735722691,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6773b9153fb126_01124740 (\Smarty\Template $_smarty_tpl) {
+function content_677506c74f88a2_24242279 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 ?><!DOCTYPE HTML>
 <html>
@@ -56,7 +56,10 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 	<body>
 		<div class="layout">
 			<header>
-				<a class="logo"><h1 class="font-logo">ПОРТФОЛИО</h1></a>
+				<a class="logo" href="<?php echo $_smarty_tpl->getValue('INDEX');?>
+">
+					<h1 class="font-logo">ПОРТФОЛИО</h1>
+				</a>
 				<div class="menu">
 					<nav class="nav">
 						<ul>
@@ -75,16 +78,25 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 						</ul>
 					</nav>
 					<div>
-						<div>
-							<a target="iframe-auth-reg" onclick="create_iframe_authorization_registration();" href="<?php echo $_smarty_tpl->getValue('HFR');?>
+						<?php if ((($tmp = (null !== ($_smarty_tpl->getValue('icon') ?? null)) ?? null)===null||$tmp==='' ? '' ?? null : $tmp)) {?>
+							<a href="">
+								<img class="" src="<?php echo $_smarty_tpl->getValue('icon');?>
+"/>
+							</a>
+							<section style="position: absolute; z-index: 5; width: fit-content; heigh: 100px; border: 3px solid black; border-radius: 5px; ">
+								<button onclick="logout('<?php echo $_smarty_tpl->getValue('ACTION');?>
+');">Выход</button>
+							</section>
+						<?php } else { ?>
+							<div>
+								<a target="iframe-auth-reg" onclick="create_iframe_authorization_registration();" href="<?php echo $_smarty_tpl->getValue('HFR');?>
 " >Вход</a> <!-- <?php echo '<?php'; ?>
  echo AUTH::PATH->value; <?php echo '?>'; ?>
  href="./frames/authorization.html" -->
-						</div>
-						<!--<a href="">
-							<img class="" src="./frontend/img/profile_oleg.jpg"/>
-						</a>-->
-					</div>
+							</div>
+						<?php }?>
+					</div> 						<!--<?php echo $_smarty_tpl->getSmarty()->getFunctionHandler('date_now')->handle(array(), $_smarty_tpl);?>
+-->
 				</div>
 			</header>
 			<main>
