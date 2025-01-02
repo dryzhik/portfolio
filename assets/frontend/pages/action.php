@@ -21,12 +21,10 @@
             $result = $wdbc->register();
 
             $last_error_wdbc = $wdbc->last_error();
-            $URL = ($result 
+            /*$URL = ($result 
                 ? "index.php?register=success" 
                 : "index.php?register=$last_error_wdbc"
-            );
-
-            // print_r(array());
+            );*/
 
             echo json_encode(array('register' => ($result ? "success" : "failed"), 
                                     'error_code' => $last_error_wdbc )); // ( $result ?  "0" :  )

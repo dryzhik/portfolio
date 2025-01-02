@@ -1,5 +1,5 @@
 
-function registr(path) { // Смена страницы!
+function registr(path) {
     var      login_reg = document.getElementById('login-reg');
     var  firstname_reg = document.getElementById('firstname-reg');
     var   lastname_reg = document.getElementById('lastname-reg');

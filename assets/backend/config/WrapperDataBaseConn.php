@@ -110,22 +110,30 @@ class Query {
         $res_having = $this->accomulate(...func_get_args());          
         
         $this->selector_query_select(SELECT_QUERY::HAVING, $res_having);
+
+        return $this;
     }
 
     function orderBy(){
         $res_ordby = $this->accomulate(...func_get_args());          /* ... (Spread) - распаковывает массив аргументов; */
         
         $this->selector_query_select(SELECT_QUERY::ORDERBY, $res_ordby);
+
+        return $this;
     }
 
     function orderByType($type){
         $this->selector_query_select(SELECT_QUERY::ORDERBYTYPE, $type);
+
+        return $this;
     }
 
     function groupBy(){
         $res_groupby = $this->accomulate(...func_get_args());          
         
         $this->selector_query_select(SELECT_QUERY::GROUPBY, $res_groupby);
+
+        return $this;
     }
 
     // [SELECT QUERY END] ------------------------------------------------------- //

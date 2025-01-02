@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.4.2, created on 2025-01-01 12:53:02
+/* Smarty version 5.4.2, created on 2025-01-02 14:49:58
   from 'file:C:\projects\site_portfolio/smarty_dirs/templates/main.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_6775107eb648e0_84350809',
+  'unifunc' => 'content_67767d661cdfa8_34495304',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fb7f699a3867fe7aa93cb3d0576d3599b9f1dc66' => 
     array (
       0 => 'C:\\projects\\site_portfolio/smarty_dirs/templates/main.tpl',
-      1 => 1735724866,
+      1 => 1735818533,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6775107eb648e0_84350809 (\Smarty\Template $_smarty_tpl) {
+function content_67767d661cdfa8_34495304 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 ?><!DOCTYPE HTML>
 <html>
@@ -108,7 +108,7 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 ?>
 			</main>
 			<footer>
-            </footer>
+			</footer>
 		</div>
 	</body>
 </html><?php }

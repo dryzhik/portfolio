@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.4.2, created on 2024-12-31 12:29:29
+/* Smarty version 5.4.2, created on 2025-01-01 13:11:44
   from 'file:C:\projects\site_portfolio/assets/frontend/mains/main_for_projects.php' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_6773b979b6ceb9_44599980',
+  'unifunc' => 'content_677514e03b0f45_89135935',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6773b979b6ceb9_44599980 (\Smarty\Template $_smarty_tpl) {
+function content_677514e03b0f45_89135935 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 }
 }

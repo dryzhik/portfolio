@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.4.2, created on 2024-12-31 12:29:30
+/* Smarty version 5.4.2, created on 2025-01-01 13:15:39
   from 'file:C:\projects\site_portfolio/assets/frontend/mains/main_for_teams.php' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_6773b97aee9359_62580270',
+  'unifunc' => 'content_677515cb0d30d1_05100753',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6773b97aee9359_62580270 (\Smarty\Template $_smarty_tpl) {
+function content_677515cb0d30d1_05100753 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 }
 }

@@ -59,7 +59,7 @@
 				{include file="$MAIN"}
 			</main>
 			<footer>
-            </footer>
+			</footer>
 		</div>
 	</body>
 </html>

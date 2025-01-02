@@ -31,6 +31,157 @@
         return time(); // strftime($format,time());
     }
 
+    $smarty->registerPlugin("function", "query_top_projects", "psql_query_top_projects");
+    function psql_query_top_projects($params, $smarty){
+        require_once($_SERVER['DOCUMENT_ROOT'].TOTAL::CDB->value);             /* -> [$dbname, $host, $port, $user, $passwd]; -> './config/config_db.php'*/
+        require_once($_SERVER['DOCUMENT_ROOT'].TOTAL::WDBC->value);             /* -> WrapperDataBase(); -> './config/WrapperDataBaseConn.php' */
+    
+        $wdbc = new WDBC($dbname, $host, $port, $user, $passwd);
+
+        $status = $wdbc ->query()
+            ->select ($params['select'])
+            ->from   ($params['from'])
+            ->orderby($params['orderby'])
+            ->limit  ($params['limit'])
+        ->exec();
+
+        if($status){
+            $array_data = $wdbc->query()->responce(); // $wdbc->query()->responce() // value="<?= $cur_idx
+
+            $html ='';
+            foreach($array_data as $data){
+                $html = $html.
+                    '<form method="POST" action="/assets/frontend/pages/project.php" style=" width: 100%; height: fit-content;">
+                        <button type="submit" style="display: flex; border: none; background-color: #F6F6F6; width: 100%; height: 100%;">
+                            <div class="div-left" style="display: flex; justify-content: center; width: 10%; height: 100%; " > <!-- background-color: red;-->
+                                <p style="align-self: start;">01<p>
+                            </div>
+                            <div class="div-right" style="width: 100%; padding: 10px; display:  flex; flex-direction: column; text-align: left; height: 100%;  border-left: 2px solid; border-color: black;"> <!-- background-color: green; -->
+                                <h1>Название проекта</h1>
+                                <img style="margin-left: 50px; background-color: gray; width: 200px; height: 200px; border-radius: 10px; "/>
+                                <p style="align-self: flex-end;">Описание проекта</p>
+                                <p>Запуск</p>
+                                <div style="display: flex; align-items: center; gap: 10px; height: fit-content;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" color="#EA5657" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"></path>
+                                    </svg>
+                                    <p>12</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-text" viewBox="0 0 16 16">
+                                        <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"></path>
+                                        <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"></path>
+                                    </svg>
+                                    <p>24</p>
+                                </div>
+                            </div>
+                            <input hidden name="id" id="id" type="number" value='.$data['id'].'>
+                        </button>
+                    </form>';
+            }
+
+            return $html;
+        }
+
+        /*if(empty($params["format"])) {
+            $format = "%b %e, %Y";
+        } else {
+            $format = $params["format"];
+        }
+        return time(); // strftime($format,time());*/
+    }
+
+    //$status = $wdbc->query()->select('*')->from('info_project')->orderby('id')->limit('10')->exec();
+
+    /*if($status){
+        echo $wdbc->responce;
+    }*/
+
+    $smarty->registerPlugin("function", "query_interests", "psql_query_interests");
+    function psql_query_interests($params, $smarty){
+
+        $interests = array('frontend' => array('PHP', 'JS', 'CSS'), 
+                      'backend' => array('C/C++', 'C#', 'Java', 'Python'));
+
+            $html = "";
+            while($element = current($interests)) {
+                $key = key($interests);
+                $array_value = $interests[$key];
+
+                
+                $value_html ="";
+                foreach($array_value as $value){
+                    $value_html = $value_html.'<p>'.$value.'</p>';
+                } //$data['id']
+
+                $html = $html.
+                '<form method="POST" action="/assets/frontend/pages/project.php" style=" width: 100%; height: fit-content;">
+                    <button type="submit" style=" appearance: none; border: none; width: 100%; height: 100%;">
+                        <div class="div-left" style="display: flex; align-items: center; text-align: center; justify-content: space-between; width: 100%; height: 100%; " > <!-- background-color: red;-->
+                            <div style="width: 100%; justify-self: flex-start; display: flex; gap: 1%;">
+                                <p >//</p>
+                                <p>'.$key.'</p>
+                            </div>
+                            <div style=" width: 100%;  align-items: center; display: flex; justify-content: flex-end; margin-left: auto; gap: 5%;" >
+                                '.$value_html.'
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <input hidden name="id" id="id" type="number" value="1">
+                    </button>
+                </form>';
+
+                next($interests);
+            }
+
+        return $html;
+    }
+
+    $smarty->registerPlugin("function", "query_our_stars", "psql_query_our_stars");
+    function psql_query_our_stars($params, $smarty){
+
+        $interests = array('frontend' => array('PHP', 'JS', 'CSS'), 
+                      'backend' => array('C/C++', 'C#', 'Java', 'Python'));
+
+            $html = "";
+            while($element = current($interests)) {
+                $key = key($interests);
+                $array_value = $interests[$key];
+
+                
+                $value_html ="";
+                foreach($array_value as $value){
+                    $value_html = $value_html.'<p>'.$value.'</p>';
+                } //$data['id']
+
+                $html = $html.
+                '<form method="POST" action="/assets/frontend/pages/project.php" style=" width: 100%; height: fit-content;">
+                    <button type="submit" style=" appearance: none; border: none; width: 100%; height: 100%;">
+                        <div class="div-left" style="display: flex; align-items: center; text-align: center; justify-content: space-between; width: 100%; height: 100%; " > <!-- background-color: red;-->
+                            <div style="width: 100%; justify-self: flex-start; display: flex; gap: 1%;">
+                                <p >//</p>
+                                <p>'.$key.'</p>
+                            </div>
+                            <div style=" width: 100%;  align-items: center; display: flex; justify-content: flex-end; margin-left: auto; gap: 5%;" >
+                                '.$value_html.'
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <input hidden name="id" id="id" type="number" value="1">
+                    </button>
+                </form>';
+
+                next($interests);
+            }
+
+        return $html;
+    }
+
+
+    
+
     // $smarty->testInstall(); 
 
     $smarty->assign("FCN", TOTAL::FCN->value); 
