@@ -58,8 +58,7 @@
 			<main>
 				{include file="$MAIN"}
 			</main>
-			<footer>
-			</footer>
+			<footer></footer> <!-- fixed footer-->
 		</div>
 	</body>
 </html>

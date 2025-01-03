@@ -48,7 +48,7 @@
         if($status){
             $array_data = $wdbc->query()->responce(); // $wdbc->query()->responce() // value="<?= $cur_idx
 
-            $html ='';
+            $html = '';
             foreach($array_data as $data){
                 $html = $html.
                     '<form method="POST" action="/assets/frontend/pages/project.php" style=" width: 100%; height: fit-content;">
@@ -80,26 +80,13 @@
 
             return $html;
         }
-
-        /*if(empty($params["format"])) {
-            $format = "%b %e, %Y";
-        } else {
-            $format = $params["format"];
-        }
-        return time(); // strftime($format,time());*/
     }
-
-    //$status = $wdbc->query()->select('*')->from('info_project')->orderby('id')->limit('10')->exec();
-
-    /*if($status){
-        echo $wdbc->responce;
-    }*/
 
     $smarty->registerPlugin("function", "query_interests", "psql_query_interests");
     function psql_query_interests($params, $smarty){
-
-        $interests = array('frontend' => array('PHP', 'JS', 'CSS'), 
-                      'backend' => array('C/C++', 'C#', 'Java', 'Python'));
+        $interests = array(
+            'frontend' => array('PHP', 'JS', 'CSS'), 
+            'backend' => array('C/C++', 'C#', 'Java', 'Python'));
 
             $html = "";
             while($element = current($interests)) {
@@ -110,7 +97,7 @@
                 $value_html ="";
                 foreach($array_value as $value){
                     $value_html = $value_html.'<p>'.$value.'</p>';
-                } //$data['id']
+                }
 
                 $html = $html.
                 '<form method="POST" action="/assets/frontend/pages/project.php" style=" width: 100%; height: fit-content;">
@@ -139,20 +126,19 @@
 
     $smarty->registerPlugin("function", "query_our_stars", "psql_query_our_stars");
     function psql_query_our_stars($params, $smarty){
-
-        $interests = array('frontend' => array('PHP', 'JS', 'CSS'), 
-                      'backend' => array('C/C++', 'C#', 'Java', 'Python'));
+        $interests = array(
+            'frontend' => array('PHP', 'JS', 'CSS'), 
+            'backend' => array('C/C++', 'C#', 'Java', 'Python'));
 
             $html = "";
             while($element = current($interests)) {
                 $key = key($interests);
                 $array_value = $interests[$key];
 
-                
-                $value_html ="";
+                $value_html = "";
                 foreach($array_value as $value){
                     $value_html = $value_html.'<p>'.$value.'</p>';
-                } //$data['id']
+                }
 
                 $html = $html.
                 '<form method="POST" action="/assets/frontend/pages/project.php" style=" width: 100%; height: fit-content;">
@@ -178,9 +164,6 @@
 
         return $html;
     }
-
-
-    
 
     // $smarty->testInstall(); 
 

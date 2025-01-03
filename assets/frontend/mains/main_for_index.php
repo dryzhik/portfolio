@@ -1,6 +1,3 @@
-
-<!--<iframe id="iframe-auth" name="iframe1" src="./frames/auth.html">
-</iframe>--> <!-- src="target.html" -->
 <section class="section_1">
 	<!-- Сначало указываем элементы с абсолютным расположением, а потом с относительным-->
 	<div class="corners">
@@ -41,7 +38,7 @@
 		<h1 style="justify-self: end;">исследований и разработки</h1>
 	</article>
 	<div class="container" style="display: flex; flex-direction: column; gap: 30px; margin-top: 2rem; width: 100%;">
-			{query_interests} <!-- select="*" from="info_project" orderby="id" limit="3" -->
+			{query_interests}
 	</div>
 </section>
 <section class="section_4">
@@ -77,6 +74,6 @@
 </section>
 <section class="section_6">
 	<div class="container" style="display: flex; flex-direction: column; gap: 30px; margin-top: 2rem; width: 100%;">
-			{query_interests} <!-- select="*" from="info_project" orderby="id" limit="3" -->
+		{query_interests} 
 	</div>
 </section>
