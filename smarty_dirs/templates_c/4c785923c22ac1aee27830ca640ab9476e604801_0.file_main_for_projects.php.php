@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.4.2, created on 2025-01-02 19:55:44
+/* Smarty version 5.4.2, created on 2025-01-03 13:00:15
   from 'file:C:\projects\site_portfolio/assets/frontend/mains/main_for_projects.php' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_6776c510e27a52_95561346',
+  'unifunc' => 'content_6777b52f508028_48266908',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c785923c22ac1aee27830ca640ab9476e604801' => 
     array (
       0 => 'C:\\projects\\site_portfolio/assets/frontend/mains/main_for_projects.php',
-      1 => 1735836940,
+      1 => 1735836985,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6776c510e27a52_95561346 (\Smarty\Template $_smarty_tpl) {
+function content_6777b52f508028_48266908 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 ?><section class="section_1" style="width: 100%;">
 	<div style="width: 100%; height: fit-content; padding-bottom: 2%; padding-left: 25%; padding-right: 25%; margin: 0%;">
@@ -49,7 +49,7 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 		</div>
 	</div>
 	<div style=" height: auto; display: flex; align-items: center; justify-content: end; flex-direction: row; width: 100%; height: 10%; background-color: #EA5657;">
-		<p>Посмотрите все наши проекты</p>
+		<p>Посмотрите все наши проекты</p> <!-- position: fixed; -->
 		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
 			<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
 		</svg>

@@ -1,6 +1,4 @@
-* {
-box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 
 :root {
 --iframeHeight: 450px;
@@ -82,8 +80,8 @@ header {
   -webkit-text-stroke-color: black;
   font-family: "Lack Line", arial;
 }
-  
-a {
+ 
+header a {
   font-family:"Helvetica Neue", Arial;
   text-decoration: auto;
   color:black;
