@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.4.2, created on 2025-01-03 13:24:04
+/* Smarty version 5.4.2, created on 2025-01-06 09:29:53
   from 'file:C:\projects\site_portfolio/assets/frontend/mains/main_for_profile.php' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_6777bac441bfb8_35529495',
+  'unifunc' => 'content_677b7861175405_55554413',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5d81a6a7ef089327f91a07a285fd7d56634ecc53' => 
     array (
       0 => 'C:\\projects\\site_portfolio/assets/frontend/mains/main_for_profile.php',
-      1 => 1735899839,
+      1 => 1735900059,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6777bac441bfb8_35529495 (\Smarty\Template $_smarty_tpl) {
+function content_677b7861175405_55554413 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 ?><section class="section_1" style="width: 100%; display: flex; flex-direction: column; gap: 100px;">
 	<div style="display: flex; flex-direction: column; width: 100%; padding-top: 10%; align-items: center;">

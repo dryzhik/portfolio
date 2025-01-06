@@ -55,14 +55,16 @@
 </section>
 <section class="section_5">
 	<div style="width: 100%; height: fit-content; padding-bottom: 2%; padding-left: 25%; padding-right: 25%; margin: 0%;">
-		<article style="display: grid; width: 50%; align-self: flex-start;">
-			<h1 style="justify-self: start;">Открытые</h1>
-			<p  style="justify-self: center;">вакансии</p>
-			<h1 style="justify-self: end;">в команды</h1>
-		</article>
-		<button>Добавить вакансию</button>
-		<div class="container" style="display: flex; flex-direction: column; gap: 30px; margin-top: 2rem; width: 100%;">
-			{query_our_stars}
+		<div class="container" style="display: flex;flex-direction: row;width: 100%;justify-content: space-between;align-items: flex-end;">
+			<article style="display: grid; width: 50%; align-self: flex-start;">
+				<h1 style="justify-self: start;">Открытые</h1>
+				<p  style="justify-self: center;">вакансии</p>
+				<h1 style="justify-self: end; ">в команды</h1>
+			</article>
+			<button style="width: 100px; height: 50px; justify-content: flex-end;">Добавить вакансию</button>
+		</div>
+		<div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; margin-top: 2rem; width: 100%; justify-items: center; place-content: center; ">
+			{query_vacancies}
 		</div>
 	</div>
 	<div style="display: flex; align-items: center; justify-content: end; flex-direction: row; width: 100%; height: 10%; background-color: #EA5657;">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.4.2, created on 2025-01-02 19:11:33
+/* Smarty version 5.4.2, created on 2025-01-06 11:21:23
   from 'file:C:\projects\site_portfolio/assets/frontend/mains/main_for_index.php' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_6776bab55389c2_77259431',
+  'unifunc' => 'content_677b9283a23553_97100880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a6c92767204320c5a17bf527ded34eb437306681' => 
     array (
       0 => 'C:\\projects\\site_portfolio/assets/frontend/mains/main_for_index.php',
-      1 => 1735834244,
+      1 => 1736151670,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6776bab55389c2_77259431 (\Smarty\Template $_smarty_tpl) {
+function content_677b9283a23553_97100880 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 ?><section class="section_1">
 	<!-- Сначало указываем элементы с абсолютным расположением, а потом с относительным-->
@@ -82,14 +82,16 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 </section>
 <section class="section_5">
 	<div style="width: 100%; height: fit-content; padding-bottom: 2%; padding-left: 25%; padding-right: 25%; margin: 0%;">
-		<article style="display: grid; width: 50%; align-self: flex-start;">
-			<h1 style="justify-self: start;">Открытые</h1>
-			<p  style="justify-self: center;">вакансии</p>
-			<h1 style="justify-self: end;">в команды</h1>
-		</article>
-		<button>Добавить вакансию</button>
-		<div class="container" style="display: flex; flex-direction: column; gap: 30px; margin-top: 2rem; width: 100%;">
-			<?php echo $_smarty_tpl->getSmarty()->getFunctionHandler('query_our_stars')->handle(array(), $_smarty_tpl);?>
+		<div class="container" style="display: flex;flex-direction: row;width: 100%;justify-content: space-between;align-items: flex-end;">
+			<article style="display: grid; width: 50%; align-self: flex-start;">
+				<h1 style="justify-self: start;">Открытые</h1>
+				<p  style="justify-self: center;">вакансии</p>
+				<h1 style="justify-self: end; ">в команды</h1>
+			</article>
+			<button style="width: 100px; height: 50px; justify-content: flex-end;">Добавить вакансию</button>
+		</div>
+		<div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px; margin-top: 2rem; width: 100%; justify-items: center; place-content: center; ">
+			<?php echo $_smarty_tpl->getSmarty()->getFunctionHandler('query_vacancies')->handle(array(), $_smarty_tpl);?>
 
 		</div>
 	</div>

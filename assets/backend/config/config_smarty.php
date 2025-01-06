@@ -165,6 +165,83 @@
         return $html;
     }
 
+
+    // {query_our_vacancies}
+
+    $smarty->registerPlugin("function", "query_vacancies", "psql_query_vacancies");
+    function psql_query_vacancies($params, $smarty){
+        enum Color: string {
+            case Red = '#FF0000';
+            case Green = '#00FF00';
+            case Blue = '#0000FF';
+            public function hex(): string {
+                return $this->value;
+            }
+            public function rgb(): array {
+                return sscanf($this->value, '#%02x%02x%02x');
+            }
+            public static function random(): self {
+                return self::cases()[array_rand(self::cases())];
+            }
+        }
+        $html = "";
+
+            /*$html = "";
+            while($element = current($interests)) {
+                $key = key($interests);
+                $array_value = $interests[$key];
+
+                $value_html = "";
+                foreach($array_value as $value){
+                    $value_html = $value_html.'<p>'.$value.'</p>';
+                }
+
+                
+
+                $html = $html.
+                '<div class="card" style="background-color: red; width: 100%; height: 250px;">
+                
+                </div>';
+
+                next($interests);
+            }*/
+
+            $max = 4;
+            for($i = 0; $i < $max; $i++){
+                $style = '';
+
+                // $style = 'background-color: '.Color::random()->hex().';';
+
+                $style = $style.($i % 2 == 0 && ($i == $max - 1) 
+                    ? 'width:  50%;  grid-column: 1 / span 2; '
+                    : 'width: 100%; ');
+
+                $html = $html.
+                '<div class="card" style="'.$style.' height: fit-content; padding: 10px; border: 1px solid gray;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 50px;">
+                        <p>ТЕСТИРОВЩИК</p>
+                        <button>Откликнуться</button>
+                    </div>
+                    <p>Автоматизация проведения лабораторных работ по программированию</p>
+                    <p>Обязанности:</p>
+                    <ul>
+                        <li>Участие в разработке архитектуры и функций системы автоматизации лабораторных работ.</li>
+                        <li>Проектирование и реализация компонентов системы, включая интерфейсы для студентов и преподавателей.</li>
+                        <li>Разработка алгоритмов автоматической проверки кода на различных языках программирования.</li>
+                        <li>Проектирование и реализация компонентов системы, включая интерфейсы для студентов и преподавателей.</li>
+                        <li>Разработка алгоритмов автоматической проверки кода на различных языках программирования.</li>
+                        <li>Интеграция системы с внешними сервисами.</li>
+                        <li>Написание документации и проведение тестирования разработанных функций.</li>
+                        <li>Участие в код-ревью и обмене знаниями с командой.</li>
+                        <li>Поддержка и улучшение существующих функций системы на основе отзывов пользователей.</li>
+                    </ul>
+                </div>';
+            }
+
+
+        return $html;
+    }
+
     // $smarty->testInstall(); 
 
     $smarty->assign("FCN", TOTAL::FCN->value); 
