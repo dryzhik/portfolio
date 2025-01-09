@@ -36,13 +36,8 @@
 
     $wdbc = new WDBC($dbname, $host, $port, $user, $passwd);
 
-    $smarty->registerObject('wdbc', $wdbc);
-    $smarty->assign('wdbc', $wdbc);
-
-
-
-    $smarty->registerPlugin("function", "query_top_projects", "psql_query_top_projects", $wdbc);
-    function psql_query_top_projects($params, $smarty){
+    $smarty->registerPlugin("function", "query_projects", "psql_query_projects");
+    function psql_query_projects($params, $smarty){
         global $wdbc;
 
         $status = $wdbc ->query()

@@ -23,6 +23,9 @@
                 </svg>
             </button>
 		</div>
+        <div class="container" style="display: flex; flex-direction: column; gap: 30px; margin-top: 2rem; width: 100%;">
+                
+        </div>
 	</div>
 	<div style=" height: auto; display: flex; align-items: center; justify-content: end; flex-direction: row; width: 100%; height: 10%; background-color: #EA5657;">
 		<p>Посмотрите все наши проекты</p> <!-- position: fixed; -->

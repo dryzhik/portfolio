@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.4.2, created on 2025-01-09 16:54:41
+/* Smarty version 5.4.2, created on 2025-01-09 17:10:43
   from 'file:C:\projects\site_portfolio/assets/frontend/mains/main_for_teams.php' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_677fd521e35872_20811461',
+  'unifunc' => 'content_677fd8e30f1b41_03055273',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3f20cf8442ffbdb1e2df327cdafa4ef1c7b0c6bc' => 
     array (
       0 => 'C:\\projects\\site_portfolio/assets/frontend/mains/main_for_teams.php',
-      1 => 1736430405,
+      1 => 1736431460,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_677fd521e35872_20811461 (\Smarty\Template $_smarty_tpl) {
+function content_677fd8e30f1b41_03055273 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 ?><section class="section_1" style="width: 100%;">
 	<div style="width: 100%; height: fit-content; padding-bottom: 2%; padding-left: 25%; padding-right: 25%; margin: 0%;">
@@ -47,6 +47,9 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
                 </svg>
             </button>
 		</div>
+        <div class="container" style="display: flex; flex-direction: column; gap: 30px; margin-top: 2rem; width: 100%;">
+                
+        </div>
 	</div>
 	<div style=" height: auto; display: flex; align-items: center; justify-content: end; flex-direction: row; width: 100%; height: 10%; background-color: #EA5657;">
 		<p>Посмотрите все наши проекты</p> <!-- position: fixed; -->
