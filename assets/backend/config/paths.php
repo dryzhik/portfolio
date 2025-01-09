@@ -39,6 +39,7 @@
 	}
 
 	enum STYLE : string {
+		case MAIN 		= "/assets/frontend/styles/css/main.css";
 		case INDEX 		= "/assets/frontend/styles/css/css/index.css";
 		case PROFILE 	= "/assets/frontend/styles/css/css/profile.css";
 		case TEAMS 		= "/assets/frontend/styles/css/css/teams.css";

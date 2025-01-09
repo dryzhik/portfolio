@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.4.2, created on 2025-01-02 19:50:25
+/* Smarty version 5.4.2, created on 2025-01-09 14:38:24
   from 'file:C:\projects\site_portfolio/smarty_dirs/templates/main.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_6776c3d1d06446_47280701',
+  'unifunc' => 'content_677fb530f18b12_50784852',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fb7f699a3867fe7aa93cb3d0576d3599b9f1dc66' => 
     array (
       0 => 'C:\\projects\\site_portfolio/smarty_dirs/templates/main.tpl',
-      1 => 1735836603,
+      1 => 1736422632,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_6776c3d1d06446_47280701 (\Smarty\Template $_smarty_tpl) {
+function content_677fb530f18b12_50784852 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 ?><!DOCTYPE HTML>
 <html>
@@ -39,10 +39,10 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\smarty_dirs\\templates';
 		
 		<!--<?php echo 2;?>
  Стили-->
-		<link  href="<?php echo $_smarty_tpl->getValue('CSS');?>
-" 	  	type="text/css" 	rel="stylesheet"> <!-- Общий стиль для всех страниц -->
 		<link  href="<?php echo $_smarty_tpl->getValue('CSS_MAIN');?>
-" 	type="text/css" 	rel="stylesheet"> <!-- Стиль для `<main>`-->
+" 	  	type="text/css" 	rel="stylesheet"> <!-- Стиль для `<main>`-->
+		<link  href="<?php echo $_smarty_tpl->getValue('CSS_TOTAL');?>
+" 	type="text/css" 	rel="stylesheet"> <!-- Общий стиль для всех страниц --> 
 		
 		<!--<?php echo 3;?>
  Скрипты -->

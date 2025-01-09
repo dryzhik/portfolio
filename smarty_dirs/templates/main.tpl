@@ -11,8 +11,8 @@
 		<link  href="{$FCN}" 		type="image/x-icon" 	rel="icon">
 		
 		<!--{2} Стили-->
-		<link  href="{$CSS}" 	  	type="text/css" 	rel="stylesheet"> <!-- Общий стиль для всех страниц -->
-		<link  href="{$CSS_MAIN}" 	type="text/css" 	rel="stylesheet"> <!-- Стиль для `<main>`-->
+		<link  href="{$CSS_MAIN}" 	  	type="text/css" 	rel="stylesheet"> <!-- Стиль для `<main>`-->
+		<link  href="{$CSS_TOTAL}" 	type="text/css" 	rel="stylesheet"> <!-- Общий стиль для всех страниц --> 
 		
 		<!--{3} Скрипты -->
 		<script src="{$JSX}" 		type="text/javascript"></script> 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.4.2, created on 2025-01-06 11:21:23
+/* Smarty version 5.4.2, created on 2025-01-09 15:12:28
   from 'file:C:\projects\site_portfolio/assets/frontend/mains/main_for_index.php' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.4.2',
-  'unifunc' => 'content_677b9283a23553_97100880',
+  'unifunc' => 'content_677fbd2c12a081_03289175',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a6c92767204320c5a17bf527ded34eb437306681' => 
     array (
       0 => 'C:\\projects\\site_portfolio/assets/frontend/mains/main_for_index.php',
-      1 => 1736151670,
+      1 => 1736424484,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_677b9283a23553_97100880 (\Smarty\Template $_smarty_tpl) {
+function content_677fbd2c12a081_03289175 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 ?><section class="section_1">
 	<!-- Сначало указываем элементы с абсолютным расположением, а потом с относительным-->
@@ -74,9 +74,17 @@ $_smarty_current_dir = 'C:\\projects\\site_portfolio\\assets\\frontend\\mains';
 			<p  style="justify-self: center;">Аллеи Славы</p>
 			<h1 style="justify-self: end;">сияют ярче, чем в Голливуде</h1>
 		</article>
-		<div class="container" style="display: flex; flex-direction: column; gap: 30px; margin-top: 2rem; width: 100%;">
-			<?php echo $_smarty_tpl->getSmarty()->getFunctionHandler('query_our_stars')->handle(array(), $_smarty_tpl);?>
- 
+		<div class="container" style="display: flex; flex-direction: row; gap: 30px; margin-top: 2rem; width: 100%;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff">
+				<path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+			</svg>
+			<div class="carousel" style="width: 50%;">
+				<?php echo $_smarty_tpl->getSmarty()->getFunctionHandler('query_stars')->handle(array('select'=>"*",'from'=>"info_project",'orderby'=>"id",'limit'=>"3"), $_smarty_tpl);?>
+
+			</div>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23fff">
+				<path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+			</svg>
 		</div>
 	</div>
 </section>

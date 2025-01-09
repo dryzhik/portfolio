@@ -31,12 +31,19 @@
         return time(); // strftime($format,time());
     }
 
-    $smarty->registerPlugin("function", "query_top_projects", "psql_query_top_projects");
+    require_once($_SERVER['DOCUMENT_ROOT'].TOTAL::CDB->value);             // -> [$dbname, $host, $port, $user, $passwd]; -> './config/config_db.php'
+    require_once($_SERVER['DOCUMENT_ROOT'].TOTAL::WDBC->value);             // -> WrapperDataBase(); -> './config/WrapperDataBaseConn.php' 
+
+    $wdbc = new WDBC($dbname, $host, $port, $user, $passwd);
+
+    $smarty->registerObject('wdbc', $wdbc);
+    $smarty->assign('wdbc', $wdbc);
+
+
+
+    $smarty->registerPlugin("function", "query_top_projects", "psql_query_top_projects", $wdbc);
     function psql_query_top_projects($params, $smarty){
-        require_once($_SERVER['DOCUMENT_ROOT'].TOTAL::CDB->value);             /* -> [$dbname, $host, $port, $user, $passwd]; -> './config/config_db.php'*/
-        require_once($_SERVER['DOCUMENT_ROOT'].TOTAL::WDBC->value);             /* -> WrapperDataBase(); -> './config/WrapperDataBaseConn.php' */
-    
-        $wdbc = new WDBC($dbname, $host, $port, $user, $passwd);
+        global $wdbc;
 
         $status = $wdbc ->query()
             ->select ($params['select'])
@@ -124,43 +131,46 @@
         return $html;
     }
 
-    $smarty->registerPlugin("function", "query_our_stars", "psql_query_our_stars");
-    function psql_query_our_stars($params, $smarty){
-        $interests = array(
-            'frontend' => array('PHP', 'JS', 'CSS'), 
-            'backend' => array('C/C++', 'C#', 'Java', 'Python'));
+    $smarty->registerPlugin("function", "query_stars", "psql_query_stars");
+    function psql_query_stars($params, $smarty){
 
-            $html = "";
-            while($element = current($interests)) {
-                $key = key($interests);
-                $array_value = $interests[$key];
+        global $wdbc;
 
-                $value_html = "";
-                foreach($array_value as $value){
-                    $value_html = $value_html.'<p>'.$value.'</p>';
-                }
+    /*require_once($_SERVER['DOCUMENT_ROOT'].TOTAL::CDB->value);             //-> [$dbname, $host, $port, $user, $passwd]; -> './config/config_db.php'
+    require_once($_SERVER['DOCUMENT_ROOT'].TOTAL::WDBC->value);             // -> WrapperDataBase(); -> './config/WrapperDataBaseConn.php' 
 
+    $wdbc = new WDBC($dbname, $host, $port, $user, $passwd);
+    */
+        /*$status = $wdbc ->query()
+            ->select ($params['select'])
+            ->from   ($params['from'])
+            ->orderby($params['orderby'])
+            ->limit  ($params['limit'])
+        ->exec();*/
+
+        $status = true;
+
+        $html = '';
+        if($status){
+            $array_data = $wdbc->query()->responce(); // $wdbc->query()->responce() // value="<?= $cur_idx
+
+            
+            /*foreach($array_data as $data){
                 $html = $html.
-                '<form method="POST" action="/assets/frontend/pages/project.php" style=" width: 100%; height: fit-content;">
-                    <button type="submit" style=" appearance: none; border: none; width: 100%; height: 100%;">
-                        <div class="div-left" style="display: flex; align-items: center; text-align: center; justify-content: space-between; width: 100%; height: 100%; " > <!-- background-color: red;-->
-                            <div style="width: 100%; justify-self: flex-start; display: flex; gap: 1%;">
-                                <p >//</p>
-                                <p>'.$key.'</p>
-                            </div>
-                            <div style=" width: 100%;  align-items: center; display: flex; justify-content: flex-end; margin-left: auto; gap: 5%;" >
-                                '.$value_html.'
-                                <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <input hidden name="id" id="id" type="number" value="1">
-                    </button>
-                </form>';
+                    '<div class="item" style="">
+                    
+                    </div>';
+            }*/
 
-                next($interests);
+            for($i = 0; $i < 3; $i++){
+                $html = $html.
+                    '<div class="item" style="">
+                    
+                    </div>';
             }
+
+            return $html;
+        }
 
         return $html;
     }
@@ -222,19 +232,19 @@
                         <p>ТЕСТИРОВЩИК</p>
                         <button>Откликнуться</button>
                     </div>
-                    <p>Автоматизация проведения лабораторных работ по программированию</p>
+                        <p>Автоматизация проведения лабораторных работ по программированию</p>
                     <p>Обязанности:</p>
-                    <ul>
-                        <li>Участие в разработке архитектуры и функций системы автоматизации лабораторных работ.</li>
-                        <li>Проектирование и реализация компонентов системы, включая интерфейсы для студентов и преподавателей.</li>
-                        <li>Разработка алгоритмов автоматической проверки кода на различных языках программирования.</li>
-                        <li>Проектирование и реализация компонентов системы, включая интерфейсы для студентов и преподавателей.</li>
-                        <li>Разработка алгоритмов автоматической проверки кода на различных языках программирования.</li>
-                        <li>Интеграция системы с внешними сервисами.</li>
-                        <li>Написание документации и проведение тестирования разработанных функций.</li>
-                        <li>Участие в код-ревью и обмене знаниями с командой.</li>
-                        <li>Поддержка и улучшение существующих функций системы на основе отзывов пользователей.</li>
-                    </ul>
+                        <ul>
+                            <li>Участие в разработке архитектуры и функций системы автоматизации лабораторных работ.</li>
+                            <li>Проектирование и реализация компонентов системы, включая интерфейсы для студентов и преподавателей.</li>
+                            <li>Разработка алгоритмов автоматической проверки кода на различных языках программирования.</li>
+                            <li>Проектирование и реализация компонентов системы, включая интерфейсы для студентов и преподавателей.</li>
+                            <li>Разработка алгоритмов автоматической проверки кода на различных языках программирования.</li>
+                            <li>Интеграция системы с внешними сервисами.</li>
+                            <li>Написание документации и проведение тестирования разработанных функций.</li>
+                            <li>Участие в код-ревью и обмене знаниями с командой.</li>
+                            <li>Поддержка и улучшение существующих функций системы на основе отзывов пользователей.</li>
+                        </ul>
                 </div>';
             }
 
